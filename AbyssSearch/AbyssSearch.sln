@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QFramework.CoreKit", "QFramework.CoreKit.csproj", "{872f3e08-429b-b563-e760-c8fb8db67775}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIKit", "UIKit.csproj", "{9bfadfc8-33d0-2bcf-fa32-5ded241d9cf8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{f1cdf331-6db2-8979-02f1-7fd706bee1c0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{0176472e-7828-ec32-5c06-e12fed12fd1b}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "spine-csharp", "spine-csharp.csproj", "{bb21afbf-7504-b0c3-e777-e089e6a918e4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "spine-unity-editor", "spine-unity-editor.csproj", "{83eff35e-a116-6687-eee4-31ad2752c215}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "spine-unity", "spine-unity.csproj", "{8726b409-0ec8-38eb-81b2-8e238e694b76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioKit", "AudioKit.csproj", "{54900357-058d-819f-3dbd-780ab5566ba8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIKit.Editor", "UIKit.Editor.csproj", "{80f957dd-3722-2d8c-c61a-e8271badec27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QFramework", "QFramework.csproj", "{d1ea1d7f-0a43-a7a1-d42b-c989306c1f59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{c3831fb1-9091-4af9-c8e9-832ce746e63a}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewAssembly", "NewAssembly.csproj", "{84bd6529-411e-ba41-43b0-82c5d41a95f5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{872f3e08-429b-b563-e760-c8fb8db67775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{872f3e08-429b-b563-e760-c8fb8db67775}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9bfadfc8-33d0-2bcf-fa32-5ded241d9cf8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9bfadfc8-33d0-2bcf-fa32-5ded241d9cf8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{f1cdf331-6db2-8979-02f1-7fd706bee1c0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{f1cdf331-6db2-8979-02f1-7fd706bee1c0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0176472e-7828-ec32-5c06-e12fed12fd1b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0176472e-7828-ec32-5c06-e12fed12fd1b}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{bb21afbf-7504-b0c3-e777-e089e6a918e4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{bb21afbf-7504-b0c3-e777-e089e6a918e4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83eff35e-a116-6687-eee4-31ad2752c215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83eff35e-a116-6687-eee4-31ad2752c215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8726b409-0ec8-38eb-81b2-8e238e694b76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8726b409-0ec8-38eb-81b2-8e238e694b76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54900357-058d-819f-3dbd-780ab5566ba8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54900357-058d-819f-3dbd-780ab5566ba8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80f957dd-3722-2d8c-c61a-e8271badec27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80f957dd-3722-2d8c-c61a-e8271badec27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{d1ea1d7f-0a43-a7a1-d42b-c989306c1f59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{d1ea1d7f-0a43-a7a1-d42b-c989306c1f59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{c3831fb1-9091-4af9-c8e9-832ce746e63a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{c3831fb1-9091-4af9-c8e9-832ce746e63a}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84bd6529-411e-ba41-43b0-82c5d41a95f5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84bd6529-411e-ba41-43b0-82c5d41a95f5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
