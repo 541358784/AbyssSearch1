@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Unity.VisualScripting
 {
-    public static class Debugity
+    public static class DebugUtility
     {
         public static string logPath => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Ludiq.log");
 

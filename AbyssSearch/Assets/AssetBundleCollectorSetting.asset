@@ -28,20 +28,12 @@ MonoBehaviour:
       GroupDesc: 
       AssetTags: 
       ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: 
-        CollectorGUID: 
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackCollector
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: 
-        CollectorGUID: 
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackCollector
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
+      Collectors: []
+  - PackageName: SrcGroup
+    PackageDesc: 
+    EnableAddressable: 0
+    LocationToLower: 0
+    IncludeAssetGUID: 0
+    AutoCollectShaders: 1
+    IgnoreRuleName: NormalIgnoreRule
+    Groups: []

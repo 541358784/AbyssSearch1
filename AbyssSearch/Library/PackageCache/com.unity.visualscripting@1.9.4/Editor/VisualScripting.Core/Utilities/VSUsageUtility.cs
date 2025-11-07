@@ -61,7 +61,7 @@ namespace Unity.VisualScripting
 
             _initializeOnLoadExecuted = true;
 
-            EditorDebugity.DeleteDebugLogFile();
+            EditorDebugUtility.DeleteDebugLogFile();
 
             EditorPlatformUtility.InitializeActiveBuildTarget();
 

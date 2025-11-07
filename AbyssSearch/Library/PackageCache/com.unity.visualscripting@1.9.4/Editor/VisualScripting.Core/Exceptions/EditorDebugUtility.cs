@@ -3,13 +3,13 @@ using UnityEditor;
 
 namespace Unity.VisualScripting
 {
-    public static class EditorDebugity
+    public static class EditorDebugUtility
     {
         internal static void DeleteDebugLogFile()
         {
-            if (File.Exists(Debugity.logPath))
+            if (File.Exists(DebugUtility.logPath))
             {
-                File.Delete(Debugity.logPath);
+                File.Delete(DebugUtility.logPath);
             }
         }
     }

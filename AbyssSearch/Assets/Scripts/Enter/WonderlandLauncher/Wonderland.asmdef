@@ -1,0 +1,22 @@
+{
+    "name": "Wonderland",
+    "rootNamespace": "",
+    "references": [
+        "YooAsset",
+        "UniTask",
+        "HybridCLR.Runtime",
+        "Unity.TextMeshPro",
+        "Yooasset.RuntimeExtension",
+        "StompyRobot",
+        "BetterStreamingAssets"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

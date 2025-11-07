@@ -41,6 +41,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\Google\ExternalDependencyManager\Editor\1.2.185\Google.JarResolver.dll" />
+    <Analyzer Include="C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\Google\ExternalDependencyManager\Editor\1.2.185\Google.PackageManagerResolver.dll" />
+    <Analyzer Include="C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\Google\ExternalDependencyManager\Editor\Google.VersionHandler.dll" />
+    <Analyzer Include="C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\Google\ExternalDependencyManager\Editor\1.2.185\Google.IOSResolver.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.62f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.62f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -308,49 +312,55 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.62f1c1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
-    </Reference>
-    <Reference Include="ReportGeneratorMerged">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.testtools.codecoverage@1.2.6\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
-    </Reference>
-    <Reference Include="unityplastic">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\unityplastic.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Plastic.Antlr3.Runtime">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Plastic.Newtonsoft.Json">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="log4netPlastic">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\log4netPlastic.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.IonicZip">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
-    </Reference>
-    <Reference Include="dnlib">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.code-philosophy.hybridclr@d505624c78\Plugins\dnlib.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="LZ4">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.code-philosophy.hybridclr@d505624c78\Plugins\LZ4.dll</HintPath>
-    </Reference>
-    <Reference Include="Markdig">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Markdig.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.TextureAssets">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Assets\Plugins\DOTween\DOTween.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenEditor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Assets\Plugins\DOTween\Editor\DOTweenEditor.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\DOTween\Editor\DOTweenEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="ReportGeneratorMerged">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.testtools.codecoverage@1.2.6\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="unityplastic">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\unityplastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Plastic.Antlr3.Runtime">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Plastic.Newtonsoft.Json">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.IonicZip">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+    </Reference>
+    <Reference Include="dnlib">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.code-philosophy.hybridclr@d505624c78\Plugins\dnlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\DOTween\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="LZ4">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.code-philosophy.hybridclr@d505624c78\Plugins\LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="Markdig">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Markdig.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.TextureAssets">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandlerImpl">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\Google\ExternalDependencyManager\Editor\1.2.185\Google.VersionHandlerImpl.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandler">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\Google\ExternalDependencyManager\Editor\Google.VersionHandler.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.62f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -737,109 +747,109 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.62f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.EditorCoroutines.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="HybridCLR.Runtime">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\HybridCLR.Runtime.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\HybridCLR.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="YooAsset">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\YooAsset.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\YooAsset.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ResourceManager">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
     </Reference>
     <Reference Include="HybridCLR.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\HybridCLR.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\HybridCLR.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ScriptableBuildPipeline">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Addressables.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Settings.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.Settings.Editor.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.Settings.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="YooAsset.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\YooAsset.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.EditorCoroutines.Editor">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Shared.Editor">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualStudio.Editor">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Core">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Core.Editor">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow.Editor">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Addressables.Editor">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State.Editor">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="YooAsset.Editor">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\YooAsset.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ScriptableBuildPipeline.Editor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Addressables">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -851,21 +861,37 @@
       <Project>{f1cdf331-6db2-8979-02f1-7fd706bee1c0}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
-    <ProjectReference Include="spine-unity.csproj">
-      <Project>{8726b409-0ec8-38eb-81b2-8e238e694b76}</Project>
-      <Name>spine-unity</Name>
+    <ProjectReference Include="UniTask.Addressables.csproj">
+      <Project>{405ac999-7ae6-c55a-9cd7-3413315db7e3}</Project>
+      <Name>UniTask.Addressables</Name>
+    </ProjectReference>
+    <ProjectReference Include="Yooasset.RuntimeExtension.csproj">
+      <Project>{0dfba663-4441-8b7f-de33-a483e932da5f}</Project>
+      <Name>Yooasset.RuntimeExtension</Name>
     </ProjectReference>
     <ProjectReference Include="QFramework.CoreKit.csproj">
       <Project>{872f3e08-429b-b563-e760-c8fb8db67775}</Project>
       <Name>QFramework.CoreKit</Name>
     </ProjectReference>
-    <ProjectReference Include="UIKit.Editor.csproj">
-      <Project>{80f957dd-3722-2d8c-c61a-e8271badec27}</Project>
-      <Name>UIKit.Editor</Name>
+    <ProjectReference Include="Google.Android.AppBundle.Editor.csproj">
+      <Project>{42324eca-9234-ab54-3a68-3791fef1e0ad}</Project>
+      <Name>Google.Android.AppBundle.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="AudioKit.csproj">
-      <Project>{54900357-058d-819f-3dbd-780ab5566ba8}</Project>
-      <Name>AudioKit</Name>
+    <ProjectReference Include="Google.Play.AssetDelivery.Samples.AssetDeliveryDemo.csproj">
+      <Project>{00bc9685-00ef-26a8-c0a8-8dd20a545eb6}</Project>
+      <Name>Google.Play.AssetDelivery.Samples.AssetDeliveryDemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="Google.Play.AssetDelivery.Samples.AssetDeliveryDemo.Editor.csproj">
+      <Project>{e45bbc70-58a7-cb2f-db75-757a58f491a2}</Project>
+      <Name>Google.Play.AssetDelivery.Samples.AssetDeliveryDemo.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Wonderland.csproj">
+      <Project>{7b5c941a-73d6-10fd-c604-f6cc7cf8d8a0}</Project>
+      <Name>Wonderland</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.csproj">
+      <Project>{b3377b51-c89b-92d4-6668-42e16677a87b}</Project>
+      <Name>UniTask</Name>
     </ProjectReference>
     <ProjectReference Include="UIKit.csproj">
       <Project>{9bfadfc8-33d0-2bcf-fa32-5ded241d9cf8}</Project>
@@ -875,13 +901,61 @@
       <Project>{83eff35e-a116-6687-eee4-31ad2752c215}</Project>
       <Name>spine-unity-editor</Name>
     </ProjectReference>
-    <ProjectReference Include="spine-csharp.csproj">
-      <Project>{bb21afbf-7504-b0c3-e777-e089e6a918e4}</Project>
-      <Name>spine-csharp</Name>
+    <ProjectReference Include="UniTask.TextMeshPro.csproj">
+      <Project>{d84b37c6-233f-10dd-a533-c0ade83c379c}</Project>
+      <Name>UniTask.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="BetterStreamingAssets.csproj">
+      <Project>{5d8dc1e8-8b5f-a4b0-68c2-9124cc2c325e}</Project>
+      <Name>BetterStreamingAssets</Name>
+    </ProjectReference>
+    <ProjectReference Include="StompyRobot.csproj">
+      <Project>{fe5a2dab-140e-17c7-abaa-f8f95914ba75}</Project>
+      <Name>StompyRobot</Name>
     </ProjectReference>
     <ProjectReference Include="QFramework.csproj">
       <Project>{d1ea1d7f-0a43-a7a1-d42b-c989306c1f59}</Project>
       <Name>QFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="Google.Play.AssetDelivery.csproj">
+      <Project>{09a372e4-ff3a-9d81-4e2a-033e6066f3b8}</Project>
+      <Name>Google.Play.AssetDelivery</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.Linq.csproj">
+      <Project>{e956568c-6c35-89ee-1f23-37f207f1ac5a}</Project>
+      <Name>UniTask.Linq</Name>
+    </ProjectReference>
+    <ProjectReference Include="Google.Play.Core.csproj">
+      <Project>{83f18292-ab3c-bea8-a773-465ffedfad5e}</Project>
+      <Name>Google.Play.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="Google.Play.Common.csproj">
+      <Project>{6ef72048-ffa7-4227-9d7b-143fde027fa6}</Project>
+      <Name>Google.Play.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="spine-unity.csproj">
+      <Project>{8726b409-0ec8-38eb-81b2-8e238e694b76}</Project>
+      <Name>spine-unity</Name>
+    </ProjectReference>
+    <ProjectReference Include="UIKit.Editor.csproj">
+      <Project>{80f957dd-3722-2d8c-c61a-e8271badec27}</Project>
+      <Name>UIKit.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AudioKit.csproj">
+      <Project>{54900357-058d-819f-3dbd-780ab5566ba8}</Project>
+      <Name>AudioKit</Name>
+    </ProjectReference>
+    <ProjectReference Include="Google.Play.AssetDelivery.Samples.TextureTargetingDemo.csproj">
+      <Project>{2e596803-0769-1f15-7297-826ac0f380ec}</Project>
+      <Name>Google.Play.AssetDelivery.Samples.TextureTargetingDemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="spine-csharp.csproj">
+      <Project>{bb21afbf-7504-b0c3-e777-e089e6a918e4}</Project>
+      <Name>spine-csharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.DOTween.csproj">
+      <Project>{99e3ce18-1c33-2373-32c0-1b94a38ae74e}</Project>
+      <Name>UniTask.DOTween</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -41,68 +41,72 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\Google\ExternalDependencyManager\Editor\1.2.185\Google.JarResolver.dll" />
+    <Analyzer Include="C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\Google\ExternalDependencyManager\Editor\1.2.185\Google.PackageManagerResolver.dll" />
+    <Analyzer Include="C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\Google\ExternalDependencyManager\Editor\Google.VersionHandler.dll" />
+    <Analyzer Include="C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\Google\ExternalDependencyManager\Editor\1.2.185\Google.IOSResolver.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.62f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.62f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonMecanim.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonRenderSeparator\SkeletonPartsRenderer.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\YieldInstructions\WaitForSpineAnimationEnd.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\MaterialChecks.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\AtlasUtilities.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\AttachmentCloneExtensions.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonRenderSeparator\SkeletonRenderSeparator.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\TimelineExtensions.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonUtility\FollowLocationRigidbody.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\AttachmentRegionExtensions.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\SkeletonExtensions.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\SettingsTriState.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Mesh Generation\MeshGenerator.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Mesh Generation\MeshRendererBuffers.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Modules\TK2D\SpriteCollectionAttachmentLoader.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Asset Types\SkeletonDataAsset.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Mesh Generation\SkeletonRendererInstruction.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Asset Types\RegionlessAttachmentLoader.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\Following\BoundingBoxFollowerGraphic.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\RootMotion\SkeletonRootMotion.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\YieldInstructions\WaitForSpineTrackEntryEnd.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\YieldInstructions\WaitForSpineEvent.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonRenderer.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\YieldInstructions\WaitForSpineAnimation.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonUtility\SkeletonUtility.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\Following\PointFollower.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Asset Types\AnimationReferenceAsset.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonUtility\FollowSkeletonUtilityRootRotation.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\EditorSkeletonPlayer.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\SpineAttributes.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonUtility\FollowLocationRigidbody2D.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\RootMotion\SkeletonMecanimRootMotion.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Asset Types\SpineAtlasAsset.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\MathUtilities.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonRendererCustomMaterials\SkeletonGraphicCustomMaterials.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Asset Types\SkeletonDataModifierAsset.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonUtility\ActivateBasedOnFlipDirection.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonAnimation.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\Following\BoneFollower.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\Internal\SkeletonSubmeshGraphic.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\RootMotion\SkeletonRootMotionBase.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Asset Types\SkeletonDataCompatibility.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonRendererCustomMaterials\SkeletonRendererCustomMaterials.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\ISkeletonAnimation.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Asset Types\BlendModeMaterials.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\Following\BoneFollowerGraphic.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\Following\BoundingBoxFollower.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonUtility\SkeletonUtilityBone.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\BuildUtilities.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Asset Types\OnDemandTextureLoader.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Asset Types\SpineSpriteAtlasAsset.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonMecanim.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\YieldInstructions\WaitForSpineAnimationEnd.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonRenderSeparator\SkeletonPartsRenderer.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\TimelineExtensions.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonUtility\FollowLocationRigidbody.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Mesh Generation\MeshRendererBuffers.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\YieldInstructions\WaitForSpineTrackEntryEnd.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\YieldInstructions\WaitForSpineEvent.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonRenderer.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonUtility\SkeletonUtility.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\Following\PointFollower.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\EditorSkeletonPlayer.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\SpineAttributes.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonUtility\FollowLocationRigidbody2D.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonRendererCustomMaterials\SkeletonGraphicCustomMaterials.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonUtility\ActivateBasedOnFlipDirection.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonAnimation.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\Internal\SkeletonSubmeshGraphic.cs" />
+    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\Following\BoneFollowerGraphic.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\YieldInstructions\WaitForSpineAnimationComplete.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Mesh Generation\SpineMesh.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonUtility\SkeletonUtilityBone.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonGraphic.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\SkeletonDataModifierAssets\BlendModeMaterials\BlendModeMaterialsAsset.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Utility\BuildUtilities.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Asset Types\EventDataReferenceAsset.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Mesh Generation\DoubleBuffered.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Asset Types\OnDemandTextureLoader.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Components\SkeletonUtility\SkeletonUtilityConstraint.cs" />
-    <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Asset Types\SpineSpriteAtlasAsset.cs" />
     <Compile Include="Assets\Plugins\Spine\Runtime\spine-unity\Asset Types\AtlasAssetBase.cs" />
     <None Include="Assets\Plugins\Spine\Runtime\spine-unity\Shaders\Outline\Spine-Skeleton-Lit-Outline.shader" />
     <None Include="Assets\Plugins\Spine\Runtime\spine-unity\Shaders\Outline\Sprite\SpritesVertexLit-Outline.shader" />
@@ -419,46 +423,52 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.62f1c1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
-    </Reference>
-    <Reference Include="ReportGeneratorMerged">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.testtools.codecoverage@1.2.6\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
-    </Reference>
-    <Reference Include="unityplastic">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\unityplastic.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Plastic.Antlr3.Runtime">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Plastic.Newtonsoft.Json">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="log4netPlastic">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\log4netPlastic.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.IonicZip">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
-    </Reference>
-    <Reference Include="dnlib">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.code-philosophy.hybridclr@d505624c78\Plugins\dnlib.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="LZ4">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.code-philosophy.hybridclr@d505624c78\Plugins\LZ4.dll</HintPath>
-    </Reference>
-    <Reference Include="Markdig">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Markdig.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.TextureAssets">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Assets\Plugins\DOTween\DOTween.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenEditor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Assets\Plugins\DOTween\Editor\DOTweenEditor.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\DOTween\Editor\DOTweenEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="ReportGeneratorMerged">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.testtools.codecoverage@1.2.6\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="unityplastic">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\unityplastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Plastic.Antlr3.Runtime">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Plastic.Newtonsoft.Json">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.IonicZip">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+    </Reference>
+    <Reference Include="dnlib">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.code-philosophy.hybridclr@d505624c78\Plugins\dnlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\DOTween\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="LZ4">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.code-philosophy.hybridclr@d505624c78\Plugins\LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="Markdig">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Markdig.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.TextureAssets">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandlerImpl">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\Google\ExternalDependencyManager\Editor\1.2.185\Google.VersionHandlerImpl.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandler">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\Google\ExternalDependencyManager\Editor\Google.VersionHandler.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.62f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -836,10 +846,10 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.62f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

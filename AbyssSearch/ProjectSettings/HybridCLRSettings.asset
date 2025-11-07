@@ -16,9 +16,10 @@ MonoBehaviour:
   useGlobalIl2cpp: 0
   hybridclrRepoURL: https://gitee.com/focus-creative-games/hybridclr
   il2cppPlusRepoURL: https://gitee.com/focus-creative-games/il2cpp_plus
-  hotUpdateAssemblyDefinitions:
-  - {fileID: 5897886265953266890, guid: 8d7a8503e467f574fb8a6efb56ec2fd5, type: 3}
-  hotUpdateAssemblies: []
+  hotUpdateAssemblyDefinitions: []
+  hotUpdateAssemblies:
+  - Assembly-CSharp
+  - YooAsset
   preserveHotUpdateAssemblies: []
   hotUpdateDllCompileOutputRootDir: HybridCLRData/HotUpdateDlls
   externalHotUpdateAssembliyDirs: []

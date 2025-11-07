@@ -41,27 +41,31 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\Google\ExternalDependencyManager\Editor\1.2.185\Google.JarResolver.dll" />
+    <Analyzer Include="C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\Google\ExternalDependencyManager\Editor\1.2.185\Google.PackageManagerResolver.dll" />
+    <Analyzer Include="C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\Google\ExternalDependencyManager\Editor\Google.VersionHandler.dll" />
+    <Analyzer Include="C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\Google\ExternalDependencyManager\Editor\1.2.185\Google.IOSResolver.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.62f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.62f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\Timer\TimerManager.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\Timer\IBinaryHeapElement.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\Player\AudioPlayer.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\Timer\Timer.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\QFramework.BindableProperty.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\Action\PlaySound.cs" />
+    <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\FluentAPI\FluentMusicAPI.cs" />
     <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\Timer\BinaryHeap.cs" />
     <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\FluentAPI\FluentSoundAPI.cs" />
     <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\Timer\TimeItem.cs" />
-    <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\Timer\TimerManager.cs" />
     <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\AudioKit.cs" />
     <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\FluentAPI\IAudioKitOnFinish.cs" />
     <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\AudioKitSettings.cs" />
     <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\FluentAPI\IAudioKitOnRelease.cs" />
-    <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\AudioManager.cs" />
-    <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\Timer\IBinaryHeapElement.cs" />
-    <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\Player\AudioPlayer.cs" />
     <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\Player\AudioSourceController.cs" />
-    <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\Timer\Timer.cs" />
-    <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\QFramework.BindableProperty.cs" />
-    <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\Action\PlaySound.cs" />
     <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\AudioKitArchitecture.cs" />
-    <Compile Include="Assets\QFramework\Toolkits\AudioKit\Scripts\FluentAPI\FluentMusicAPI.cs" />
     <None Include="Assets\QFramework\Toolkits\AudioKit\Scripts\AudioKit.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.62f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -313,46 +317,52 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.62f1c1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
-    </Reference>
-    <Reference Include="ReportGeneratorMerged">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.testtools.codecoverage@1.2.6\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
-    </Reference>
-    <Reference Include="unityplastic">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\unityplastic.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Plastic.Antlr3.Runtime">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Plastic.Newtonsoft.Json">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="log4netPlastic">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\log4netPlastic.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.IonicZip">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
-    </Reference>
-    <Reference Include="dnlib">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.code-philosophy.hybridclr@d505624c78\Plugins\dnlib.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="LZ4">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.code-philosophy.hybridclr@d505624c78\Plugins\LZ4.dll</HintPath>
-    </Reference>
-    <Reference Include="Markdig">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Markdig.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.TextureAssets">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Assets\Plugins\DOTween\DOTween.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenEditor">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Assets\Plugins\DOTween\Editor\DOTweenEditor.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\DOTween\Editor\DOTweenEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="ReportGeneratorMerged">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.testtools.codecoverage@1.2.6\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="unityplastic">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\unityplastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Plastic.Antlr3.Runtime">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Plastic.Newtonsoft.Json">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.IonicZip">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+    </Reference>
+    <Reference Include="dnlib">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.code-philosophy.hybridclr@d505624c78\Plugins\dnlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\DOTween\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="LZ4">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.code-philosophy.hybridclr@d505624c78\Plugins\LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="Markdig">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\QFramework\Toolkits\_CoreKit\PackageKit\Markdown\Markdig.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.TextureAssets">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandlerImpl">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\Google\ExternalDependencyManager\Editor\1.2.185\Google.VersionHandlerImpl.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandler">
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Assets\Plugins\Google\ExternalDependencyManager\Editor\Google.VersionHandler.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.62f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -730,10 +740,10 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.62f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch\AbyssSearch\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <HintPath>C:\Users\yijie.zhou\Desktop\github\AbyssSearch1\AbyssSearch\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

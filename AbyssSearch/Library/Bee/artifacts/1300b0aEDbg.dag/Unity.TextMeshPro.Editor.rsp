@@ -125,6 +125,7 @@
 -define:UNITY_EDITOR_ONLY_COMPILATION
 -r:"Assets/Plugins/DOTween/DOTween.dll"
 -r:"Assets/Plugins/DOTween/Editor/DOTweenEditor.dll"
+-r:"Assets/Plugins/Google/ExternalDependencyManager/Editor/Google.VersionHandler.dll"
 -r:"Assets/QFramework/Toolkits/_CoreKit/PackageKit/Markdown/Markdig.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.62f1c1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.62f1c1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
@@ -358,6 +359,10 @@
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.UI.ref.dll"
+-analyzer:"Assets/Plugins/Google/ExternalDependencyManager/Editor/1.2.185/Google.IOSResolver.dll"
+-analyzer:"Assets/Plugins/Google/ExternalDependencyManager/Editor/1.2.185/Google.JarResolver.dll"
+-analyzer:"Assets/Plugins/Google/ExternalDependencyManager/Editor/1.2.185/Google.PackageManagerResolver.dll"
+-analyzer:"Assets/Plugins/Google/ExternalDependencyManager/Editor/Google.VersionHandler.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.62f1c1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.62f1c1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Library/PackageCache/com.unity.textmeshpro@3.0.7/Scripts/Editor/DropdownOptionListDrawer.cs"
