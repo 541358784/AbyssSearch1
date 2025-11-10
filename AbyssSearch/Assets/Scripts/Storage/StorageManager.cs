@@ -47,7 +47,7 @@ public class StorageManager
       
    }
 
-   public StorageRoot Root;
+   public StorageRoot Root = new StorageRoot();
    private string StorageSavePath => Path.Combine(Application.persistentDataPath,"storage.json");
    public void SaveToFile()
    {
@@ -66,7 +66,6 @@ public class StorageManager
       else
       {
          Debug.Log("存档文件不存在,创建新存档");
-         Root = new StorageRoot();
          SaveToFile();
       }
    }
