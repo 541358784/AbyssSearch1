@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class BulletBase:MonoBehaviour
+public abstract class BulletBase:Collider
 {
     public void Reset()
     {
@@ -8,4 +8,7 @@ public class BulletBase:MonoBehaviour
         transform.localPosition = Vector3.zero;
         transform.localRotation = new Quaternion(0, 0, 0, 0);
     }
+
+    public abstract void Init(BulletInitDataStruct bulletData);
+    public abstract void PrivateUpdate(float time);
 }

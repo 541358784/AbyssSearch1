@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Framework;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ public class BulletFactory:Singleton<BulletFactory>
         {
             if (_poolRoot == null)
             {
-                _poolRoot = new GameObject("BulletPool");
+                _poolRoot = GameObjectFactory.Create(false,"BulletPool");
                 _poolRoot.SetActive(false);
             }
             return _poolRoot;

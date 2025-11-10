@@ -12,12 +12,12 @@ namespace Framework
         private static Transform _defaultRoot;
 
 
-        public static GameObject Create(bool dontDestroyOnLoad)
+        public static GameObject Create(bool dontDestroyOnLoad,string name = "FromGameObjectFactory")
         {
             try
             {
-                var go = new GameObject();
-                if (dontDestroyOnLoad) GameObject.DontDestroyOnLoad(go);
+                var go = new GameObject(name);
+                if (dontDestroyOnLoad && Application.isPlaying) GameObject.DontDestroyOnLoad(go);
                 go.transform.parent = GetDefaultRoot();
                 return go;
             }
