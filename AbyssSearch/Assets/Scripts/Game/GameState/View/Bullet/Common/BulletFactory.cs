@@ -26,16 +26,19 @@ public class BulletFactory:Singleton<BulletFactory>
         {
             var bullet = NormalBulletPool.Pop();
             bullet.Reset();
+            bullet.ColliderRegister();
             return bullet;   
         }
         var newBullet = new GameObject("Bullet").AddComponent<NormalBullet>();
         newBullet.transform.SetParent(PoolRoot.transform,false);
+        newBullet.ColliderRegister();
         return newBullet;
     }
 
     public void RecycleBullet(BulletBase bullet)
     {
         bullet.transform.SetParent(PoolRoot.transform,false);
+        bullet.ColliderUnRegister();
         NormalBulletPool.Push((NormalBullet)bullet);
     }
 }

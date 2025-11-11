@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class ColliderCheckController:MonoBehaviour
+public class ColliderCheckController:Singleton<ColliderCheckController>
 {
     public float Width;//区域宽度
     public float Height;//区域高度
@@ -74,11 +74,6 @@ public class ColliderCheckController:MonoBehaviour
                 Grids[pair.Item1,pair.Item2].Add(evt.Collider);
             }
         }
-    }
-
-    public void OnDestroy()
-    {
-        EventManager.Instance.RemoveEvent<EventColliderLocalPositionChange>(OnColliderLocalPositionChange);
     }
 
     #region GridDiff

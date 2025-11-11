@@ -27,6 +27,15 @@ public abstract class Collider : MonoBehaviour
         StaticId++;
     }
 
+    public void ColliderRegister()
+    {
+        ColliderCheckController.Instance.Register(this);
+    }
+    public void ColliderUnRegister()
+    {
+        ColliderCheckController.Instance.UnRegister(this);
+    }
+
     public abstract ColliderType GetColliderType();
     public ColliderType Type => GetColliderType();
     public virtual float CollideAreaRadius => 0;

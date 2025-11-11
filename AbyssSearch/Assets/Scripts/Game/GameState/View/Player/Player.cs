@@ -2,8 +2,12 @@
 using Storage.StorageGenerateClass;
 using UnityEngine;
 
-public class Player : MonoBehaviour,IPauseAble
+public class Player : Collider,IPauseAble
 {
+    public override ColliderType GetColliderType()
+    {
+        return ColliderType.Player;
+    }
     public StoragePlayerData Storage => StorageManager.Instance.Root.GameData.PlayerData;
 
     public void LogicUpdate()

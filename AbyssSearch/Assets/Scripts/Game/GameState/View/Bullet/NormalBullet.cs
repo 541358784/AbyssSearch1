@@ -16,8 +16,9 @@ public class NormalBullet : BulletBase
         DistancePass = 0;
     }
 
-    public override void PrivateUpdate(float time)
+    public override void LogicUpdate()
     {
+        var time = Time.deltaTime;
         var needRecycle = false;
         var moveDistance = time * Speed;
         DistancePass += moveDistance;
