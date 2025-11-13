@@ -18,6 +18,7 @@ public class NormalBullet : BulletBase
 
     public override void LogicUpdate()
     {
+        base.LogicUpdate();
         var time = Time.deltaTime;
         var needRecycle = false;
         var moveDistance = time * Speed;
@@ -32,13 +33,25 @@ public class NormalBullet : BulletBase
         LocalPosition += (Vector3)Direction.normalized * moveDistance;
     }
 
-    public override void OnCollide(Collider collider)
+    public override float GetCollideAreaRadius()
     {
-        
+        return 1f;
+    }
+
+    public override ColliderTargetType GetColliderTargetType()
+    {
+        return ColliderTargetType.PlayerBullet;
     }
     
-    public override ColliderType GetColliderType()
+    public override ColliderShapeData GetCollideShapeData()
     {
-        return ColliderType.PlayerBullet;
+        return new ColliderShapeData()
+        {
+            Radius = 0.1f
+        };
+    }
+    public override ColliderShapeType GetColliderShapeType()
+    {
+        return ColliderShapeType.Round;
     }
 }
