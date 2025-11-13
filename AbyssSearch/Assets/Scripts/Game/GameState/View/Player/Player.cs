@@ -64,7 +64,22 @@ public class Player : GameObj
         {
             state.Add(pair.Key,Input.GetKeyDown(pair.Value));
         }
+        DealOppositeDirection(state);
         return state;
+    }
+
+    public void DealOppositeDirection(Dictionary<ControlDirection, bool> state)//去掉相对的控制方向，当两个控制方向相对时视为全部无效
+    {
+        if (state[ControlDirection.Up] && state[ControlDirection.Down])
+        {
+            state[ControlDirection.Up] = false;
+            state[ControlDirection.Down] = false;
+        }
+        if (state[ControlDirection.Right] && state[ControlDirection.Left])
+        {
+            state[ControlDirection.Right] = false;
+            state[ControlDirection.Left] = false;
+        }
     }
     public Dictionary<ControlDirection, bool> CurrentControlState;
     public Vector2 CurrentSpeed;
@@ -75,8 +90,51 @@ public class Player : GameObj
         var maxSpeed = PlayerConfig.MoveSpeed;
         var addSpeedPerSec = maxSpeed / PlayerConfig.AddSpeedTime;
         var addSpeed = addSpeedPerSec * Time.deltaTime;
-        var speedChange = new Dictionary<ControlDirection, float>();
+        var reduceSpeedPerSec = maxSpeed/PlayerConfig.ReduceSpeedTime;
+        var reduceSpeed = reduceSpeedPerSec * Time.deltaTime;
+        var speedChange = Vector2.zero;
         
+        if (controlState[ControlDirection.Up])
+        {
+            speedChange.y += addSpeed;
+        }
+        else if (CurrentSpeed.y > 0)
+        {
+            speedChange.y -= reduceSpeed;
+        }
+        
+        if (controlState[ControlDirection.Down])
+        {
+            speedChange.y -= addSpeed;
+        }
+        else if (CurrentSpeed.y < 0)
+        {
+            speedChange.y += reduceSpeed;
+        }
+        
+        if (controlState[ControlDirection.Right])
+        {
+            speedChange.x += addSpeed;
+        }
+        else if (CurrentSpeed.x > 0)
+        {
+            speedChange.x -= reduceSpeed;
+        }
+        
+        if (controlState[ControlDirection.Left])
+        {
+            speedChange.x -= addSpeed;
+        }
+        else if (CurrentSpeed.x < 0)
+        {
+            speedChange.x += reduceSpeed;
+        }
+
+        var newSpeed = CurrentSpeed + speedChange;
+        if (speedChange.x > 0 && CurrentSpeed.x > 0)//算速度上限
+        {
+            
+        }
         
         
         
