@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 public class ColliderHandler:Singleton<ColliderHandler>
 { 
-    Dictionary<ColliderType, Action<Collider, Collider>> handlers = new();
+    Dictionary<ColliderType, Action<ICollider, ICollider>> handlers = new();
     public Dictionary<ColliderType, ColliderType> ColliderTypeTriggerMap = new();
     public void Register(ColliderType a, ColliderType b,
-        Action<Collider, Collider> handler)
+        Action<ICollider, ICollider> handler)
     {
         handlers[a|b] = handler;
         if (!ColliderTypeTriggerMap.TryAdd(a,b))
@@ -21,7 +21,7 @@ public class ColliderHandler:Singleton<ColliderHandler>
             return triggerTypes;
         return ColliderType.None;
     }
-    public void Resolve(Collider a, Collider b)
+    public void Resolve(ICollider a, ICollider b)
     {
         if (handlers.TryGetValue(a.Type | b.Type, out var h))
             h(a, b);
@@ -43,15 +43,15 @@ public class ColliderHandler:Singleton<ColliderHandler>
         Register(ColliderType.Enemy, ColliderType.Player, Enemy2Player);
     }
 
-    public void PlayerBullet2Enemy(Collider a,Collider b)
+    public void PlayerBullet2Enemy(ICollider a,ICollider b)
     {
         
     }
-    public void EnemyBullet2Player(Collider a,Collider b)
+    public void EnemyBullet2Player(ICollider a,ICollider b)
     {
         
     }
-    public void Enemy2Player(Collider a,Collider b)
+    public void Enemy2Player(ICollider a,ICollider b)
     {
         
     }

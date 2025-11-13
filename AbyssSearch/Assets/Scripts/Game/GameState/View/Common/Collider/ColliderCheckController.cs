@@ -12,9 +12,9 @@ public class ColliderCheckController:Singleton<ColliderCheckController>
     public float GridWidth => Width / ColumnCount;//格子宽度
     public float GridHeight => Height / RowCount;//格子高度
     public ColliderCheckGrid[,] Grids;
-    public Dictionary<Collider, GridRect> ColliderGridMaps;
-    public List<Collider> TriggerColliders;
-    public HashSet<(int, int)> ColliderDeduplicationSet;//碰撞去重表
+    public Dictionary<ICollider, GridRect> IColliderGridMaps;
+    public List<ICollider> TriggerIColliders;
+    public HashSet<(ICollider, ICollider)> IColliderDeduplicationSet;//碰撞去重表
     public ColliderType TriggerType = ColliderType.PlayerBullet | ColliderType.Player;//用来遍历的触发器类型，玩家的子弹数量比较可控
     private bool IsInit = false;
     public void Init()
@@ -28,10 +28,10 @@ public class ColliderCheckController:Singleton<ColliderCheckController>
                 Grids[i,j] = grid;
             }
         }
-        ColliderGridMaps = new Dictionary<Collider, GridRect>();
-        TriggerColliders = new List<Collider>();
-        EventManager.Instance.RemoveEvent<EventColliderLocalPositionChange>(OnColliderLocalPositionChange);
-        EventManager.Instance.AddEvent<EventColliderLocalPositionChange>(OnColliderLocalPositionChange);
+        IColliderGridMaps = new Dictionary<ICollider, GridRect>();
+        TriggerIColliders = new List<ICollider>();
+        EventManager.Instance.RemoveEvent<EventColliderPositionChange>(OnIColliderLocalPositionChange);
+        EventManager.Instance.AddEvent<EventColliderPositionChange>(OnIColliderLocalPositionChange);
         IsInit = true;
         while (PreRegisterQueue.Count > 0)
         {
@@ -39,11 +39,11 @@ public class ColliderCheckController:Singleton<ColliderCheckController>
         }
     }
 
-    public GridRect GetColliderGridRect(Collider collider)
+    public GridRect GetIColliderGridRect(ICollider ICollider)
     {
-        var colliderPosition = collider.LocalPosition + new Vector3(Width / 2, Height / 2);
-        var minPoint = colliderPosition - new Vector3(-collider.CollideAreaRadius, -collider.CollideAreaRadius);
-        var maxPoint = colliderPosition + new Vector3(-collider.CollideAreaRadius, -collider.CollideAreaRadius);
+        var IColliderPosition = ICollider.ColliderPosition + new Vector3(Width / 2, Height / 2);
+        var minPoint = IColliderPosition - new Vector3(-ICollider.CollideAreaRadius, -ICollider.CollideAreaRadius);
+        var maxPoint = IColliderPosition + new Vector3(-ICollider.CollideAreaRadius, -ICollider.CollideAreaRadius);
         var minX = (int)(minPoint.x / GridWidth);
         var minY = (int)(minPoint.y / GridHeight);
         var maxX = (int)(maxPoint.x / GridWidth);
@@ -51,15 +51,15 @@ public class ColliderCheckController:Singleton<ColliderCheckController>
         var rect = new GridRect(minX, minY, maxX, maxY);
         return rect;
     }
-    public void OnColliderLocalPositionChange(EventColliderLocalPositionChange evt)
+    public void OnIColliderLocalPositionChange(EventColliderPositionChange evt)
     {
-        if (!ColliderGridMaps.TryGetValue(evt.Collider,out var oldRect))
+        if (!IColliderGridMaps.TryGetValue(evt.Collider,out var oldRect))
         {
             return;
         }
-        var rect = GetColliderGridRect(evt.Collider);
+        var rect = GetIColliderGridRect(evt.Collider);
         GetDiff(oldRect, rect, out var removeList, out var addList);
-        ColliderGridMaps[evt.Collider] = rect;
+        IColliderGridMaps[evt.Collider] = rect;
         if (removeList.Count > 0)
         {
             foreach (var pair in removeList)
@@ -169,38 +169,53 @@ public class ColliderCheckController:Singleton<ColliderCheckController>
     }
     #endregion
 
-    private Queue<Collider> PreRegisterQueue = new Queue<Collider>();
-    public void Register(Collider collider)
+    private Queue<ICollider> PreRegisterQueue = new Queue<ICollider>();
+    
+    public ColliderCheckController()
+    {
+        EventManager.Instance.AddEvent<EventColliderRegister>(RegisterEvent);
+        EventManager.Instance.AddEvent<EventColliderUnRegister>(UnRegisterEvent);
+    }
+
+    public void RegisterEvent(EventColliderRegister evt)
+    {
+        Register(evt.Obj);
+    }
+    public void UnRegisterEvent(EventColliderUnRegister evt)
+    {
+        UnRegister(evt.Obj);
+    }
+    public void Register(ICollider ICollider)
     {
         if (!IsInit)//未初始化，暂存注册的碰撞体等初始化后再注册
         {
-            PreRegisterQueue.Enqueue(collider);
+            PreRegisterQueue.Enqueue(ICollider);
             return;
         }
-        if (ColliderGridMaps.ContainsKey(collider))
+        if (IColliderGridMaps.ContainsKey(ICollider))
         {
             Debug.LogError("重复注册碰撞体");
             return;   
         }
 
-        var rect = GetColliderGridRect(collider);
+        var rect = GetIColliderGridRect(ICollider);
         for (var x = rect.minX; x <= rect.maxX; x++)
         {
             for (var y = rect.minY; y <= rect.maxY; y++)
             {
-                Grids[x,y].Add(collider);
+                Grids[x,y].Add(ICollider);
             }
         }
-        ColliderGridMaps.Add(collider,rect);
-        if (TriggerType.HasFlag(collider.Type))
+        IColliderGridMaps.Add(ICollider,rect);
+        if (TriggerType.HasFlag(ICollider.Type))
         {
-            TriggerColliders.Add(collider);
+            TriggerIColliders.Add(ICollider);
         }
     }
 
-    public void UnRegister(Collider collider)
+    public void UnRegister(ICollider ICollider)
     {
-        if (!ColliderGridMaps.TryGetValue(collider,out var rect))
+        if (!IColliderGridMaps.TryGetValue(ICollider,out var rect))
         {
             return;   
         }
@@ -208,45 +223,45 @@ public class ColliderCheckController:Singleton<ColliderCheckController>
         {
             for (var y = rect.minY; y <= rect.maxY; y++)
             {
-                Grids[x,y].Remove(collider);
+                Grids[x,y].Remove(ICollider);
             }
         }
-        ColliderGridMaps.Remove(collider);
-        if (TriggerType.HasFlag(collider.Type))
+        IColliderGridMaps.Remove(ICollider);
+        if (TriggerType.HasFlag(ICollider.Type))
         {
-            TriggerColliders.Remove(collider);
+            TriggerIColliders.Remove(ICollider);
         }
     }
 
 
-    public void CheckCollider()//检测碰撞
+    public void CheckICollider()//检测碰撞
     {
-        ColliderDeduplicationSet.Clear();
-        foreach (var triggerCollider in TriggerColliders)//遍历每个触发器
+        IColliderDeduplicationSet.Clear();
+        foreach (var triggerICollider in TriggerIColliders)//遍历每个触发器
         {
-            var triggerTypes = ColliderHandler.Instance.GetTriggerTypes(triggerCollider.Type);
-            var rect = ColliderGridMaps[triggerCollider];
+            var triggerTypes = ColliderHandler.Instance.GetTriggerTypes(triggerICollider.Type);
+            var rect = IColliderGridMaps[triggerICollider];
             for (var x = rect.minX; x <= rect.maxX; x++)//遍历触发器占据的每个格子
             {
                 for (var y = rect.minY; y <= rect.maxY; y++)
                 {
-                    foreach (var collider in Grids[x, y].GetContains(triggerTypes))//遍历格子内每个类型正确的碰撞体
+                    foreach (var ICollider in Grids[x, y].GetContains(triggerTypes))//遍历格子内每个类型正确的碰撞体
                     {
-                        if (collider == triggerCollider)
+                        if (ICollider == triggerICollider)
                             continue;
-                        var distance = collider.LocalPosition - triggerCollider.LocalPosition;
+                        var distance = ICollider.ColliderPosition - triggerICollider.ColliderPosition;
                         var distanceValue = distance.x * distance.x + distance.y * distance.y;
-                        var radius = collider.CollideAreaRadius + triggerCollider.CollideAreaRadius;
+                        var radius = ICollider.CollideAreaRadius + triggerICollider.CollideAreaRadius;
                         var radiusSquare = radius * radius;
                         if (distanceValue <= radiusSquare)//圆形碰撞体判断
                         {
-                            if (ColliderDeduplicationSet.Contains((triggerCollider.Id, collider.Id)))//碰撞去重
+                            if (IColliderDeduplicationSet.Contains((triggerICollider, ICollider)))//碰撞去重
                             {
                                 continue;
                             }
-                            ColliderDeduplicationSet.Add((triggerCollider.Id, collider.Id));//正反都加,避免双向检测
-                            ColliderDeduplicationSet.Add((collider.Id, triggerCollider.Id));
-                            EventManager.Instance.SendEvent(new EventColliderTrigger(triggerCollider, collider));//发送碰撞事件
+                            IColliderDeduplicationSet.Add((triggerICollider, ICollider));//正反都加,避免双向检测
+                            IColliderDeduplicationSet.Add((ICollider, triggerICollider));
+                            EventManager.Instance.SendEvent(new EventColliderTrigger(triggerICollider, ICollider));//发送碰撞事件
                         }
                     }
                 }

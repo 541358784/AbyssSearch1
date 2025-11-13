@@ -26,19 +26,22 @@ public class BulletFactory:Singleton<BulletFactory>
         {
             var bullet = NormalBulletPool.Pop();
             bullet.Reset();
-            bullet.ColliderRegister();
+            ((ICollider)bullet).ColliderRegister();
+            ((IPauseAble)bullet).PauseAbleRegister();
             return bullet;   
         }
         var newBullet = new GameObject("Bullet").AddComponent<NormalBullet>();
         newBullet.transform.SetParent(PoolRoot.transform,false);
-        newBullet.ColliderRegister();
+        ((ICollider)newBullet).ColliderRegister();
+        ((IPauseAble)newBullet).PauseAbleRegister();
         return newBullet;
     }
 
     public void RecycleBullet(BulletBase bullet)
     {
         bullet.transform.SetParent(PoolRoot.transform,false);
-        bullet.ColliderUnRegister();
+        ((ICollider)bullet).ColliderUnRegister();
+        ((IPauseAble)bullet).PauseAbleUnRegister();
         NormalBulletPool.Push((NormalBullet)bullet);
     }
 }

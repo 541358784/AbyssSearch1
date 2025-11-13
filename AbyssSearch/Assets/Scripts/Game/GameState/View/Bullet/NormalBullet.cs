@@ -32,11 +32,16 @@ public class NormalBullet : BulletBase
         LocalPosition += (Vector3)Direction.normalized * moveDistance;
     }
 
-    public override void OnCollide(Collider collider)
+    public override void OnCollide(ICollider collider)
     {
         
     }
-    
+
+    public override float GetCollideAreaRadius()
+    {
+        return 1f;
+    }
+
     public override ColliderType GetColliderType()
     {
         return ColliderType.PlayerBullet;

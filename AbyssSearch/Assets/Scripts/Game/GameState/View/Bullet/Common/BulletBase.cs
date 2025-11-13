@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class BulletBase:Collider,IPauseAble
+public abstract class BulletBase:GameObj
 {
     public void Reset()
     {
@@ -10,5 +10,4 @@ public abstract class BulletBase:Collider,IPauseAble
     }
 
     public abstract void Init(BulletInitDataStruct bulletData);
-    public abstract void LogicUpdate();
 }
