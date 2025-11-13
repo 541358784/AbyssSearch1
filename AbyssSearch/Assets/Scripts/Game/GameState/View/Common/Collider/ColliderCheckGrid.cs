@@ -2,14 +2,14 @@
 
 public class ColliderCheckGrid
 {
-    public Dictionary<ColliderType,LinkedList<ICollider>> Contains;
+    public Dictionary<ColliderTargetType,LinkedList<ICollider>> Contains;
     public int IndexX;
     public int IndexY;
     public ColliderCheckGrid(int x,int y)
     {
         IndexX = x;
         IndexY = y;
-        Contains = new Dictionary<ColliderType, LinkedList<ICollider>>();
+        Contains = new Dictionary<ColliderTargetType, LinkedList<ICollider>>();
     }
 
     public void Remove(ICollider collider)
@@ -27,7 +27,7 @@ public class ColliderCheckGrid
         Contains[collider.Type].AddLast(collider);
     }
 
-    public IEnumerable<ICollider> GetContains(ColliderType type)
+    public IEnumerable<ICollider> GetContains(ColliderTargetType type)
     {
         foreach (var pair in Contains)
         {

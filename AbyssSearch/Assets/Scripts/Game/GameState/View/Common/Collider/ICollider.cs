@@ -4,13 +4,16 @@ using UnityEngine;
 
 public interface ICollider
 {
-    public Vector3 GetColliderPosition();
-    public Vector3 ColliderPosition => GetColliderPosition();
+    public Vector2 GetColliderPosition();
+    public Vector2 ColliderPosition => GetColliderPosition();
     public void OnCollide(ICollider collider);
-    public ColliderType GetColliderType();
-    public ColliderType Type => GetColliderType();
-    public float GetCollideAreaRadius();
-    public float CollideAreaRadius => GetCollideAreaRadius();
+    public ColliderTargetType GetColliderTargetType();
+    public ColliderTargetType Type => GetColliderTargetType();
+    public ColliderShapeType GetColliderShapeType();
+    public ColliderShapeType ShapeType => GetColliderShapeType();
+    
+    public ColliderShapeData GetCollideShapeData();
+    public ColliderShapeData ShapeData => GetCollideShapeData();
     public void OnColliderPositionChange()//碰撞体位置变化事件
     {
         EventManager.Instance.SendEventImmediately(new EventColliderPositionChange(this));

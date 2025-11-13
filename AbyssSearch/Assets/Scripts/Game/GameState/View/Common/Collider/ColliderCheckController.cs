@@ -15,7 +15,7 @@ public class ColliderCheckController:Singleton<ColliderCheckController>
     public Dictionary<ICollider, GridRect> IColliderGridMaps;
     public List<ICollider> TriggerIColliders;
     public HashSet<(ICollider, ICollider)> IColliderDeduplicationSet;//碰撞去重表
-    public ColliderType TriggerType = ColliderType.PlayerBullet | ColliderType.Player;//用来遍历的触发器类型，玩家的子弹数量比较可控
+    public ColliderTargetType TriggerType = ColliderTargetType.PlayerBullet | ColliderTargetType.Player;//用来遍历的触发器类型，玩家的子弹数量比较可控
     private bool IsInit = false;
     public void Init()
     {

@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class Player : GameObj
 {
-    public override ColliderType GetColliderType()
+    public override ColliderTargetType GetColliderTargetType()
     {
-        return ColliderType.Player;
+        return ColliderTargetType.Player;
     }
 
     public override void OnCollide(ICollider collider)
@@ -131,16 +131,50 @@ public class Player : GameObj
         }
 
         var newSpeed = CurrentSpeed + speedChange;
-        if (speedChange.x > 0 && CurrentSpeed.x > 0)//算速度上限
+        if (speedChange.x > 0 && CurrentSpeed.x >= 0)//算速度上限X
         {
-            
+            if (newSpeed.x > maxSpeed)
+                newSpeed.x = maxSpeed;
         }
-        
-        
-        
-        
-        var moveDistance = new Vector2(0,0);
-        transform.localPosition += (Vector3)moveDistance;
+        if (speedChange.x < 0 && CurrentSpeed.x <= 0)
+        {
+            if (newSpeed.x < -maxSpeed)
+                newSpeed.x = -maxSpeed;
+        }
+        if (speedChange.y > 0 && CurrentSpeed.y >= 0)//算速度上限Y
+        {
+            if (newSpeed.y > maxSpeed)
+                newSpeed.y = maxSpeed;
+        }
+        if (speedChange.y < 0 && CurrentSpeed.y <= 0)
+        {
+            if (newSpeed.y < -maxSpeed)
+                newSpeed.y = -maxSpeed;
+        }
+
+        if (speedChange.x > 0 && CurrentSpeed.x <= 0 && !controlState[ControlDirection.Right])//自然减速不超过0X
+        {
+            if (newSpeed.x > 0)
+                newSpeed.x = 0;
+        }
+        if (speedChange.x < 0 && CurrentSpeed.x >= 0 && !controlState[ControlDirection.Left])
+        {
+            if (newSpeed.x < 0)
+                newSpeed.x = 0;
+        }
+        if (speedChange.y > 0 && CurrentSpeed.y <= 0 && !controlState[ControlDirection.Up])//自然减速不超过0Y
+        {
+            if (newSpeed.y > 0)
+                newSpeed.y = 0;
+        }
+        if (speedChange.y < 0 && CurrentSpeed.y >= 0 && !controlState[ControlDirection.Down])
+        {
+            if (newSpeed.y < 0)
+                newSpeed.y = 0;
+        }
+        CurrentSpeed = newSpeed;
+        var moveDistance = CurrentSpeed * Time.deltaTime;
+        LocalPosition += (Vector3)moveDistance;
     }
     
     private float lastAttackTime;

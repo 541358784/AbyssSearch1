@@ -42,8 +42,8 @@ public class NormalBullet : BulletBase
         return 1f;
     }
 
-    public override ColliderType GetColliderType()
+    public override ColliderTargetType GetColliderTargetType()
     {
-        return ColliderType.PlayerBullet;
+        return ColliderTargetType.PlayerBullet;
     }
 }

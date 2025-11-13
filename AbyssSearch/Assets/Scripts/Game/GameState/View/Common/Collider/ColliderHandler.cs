@@ -3,23 +3,23 @@ using System.Collections.Generic;
 
 public class ColliderHandler:Singleton<ColliderHandler>
 { 
-    Dictionary<ColliderType, Action<ICollider, ICollider>> handlers = new();
-    public Dictionary<ColliderType, ColliderType> ColliderTypeTriggerMap = new();
-    public void Register(ColliderType a, ColliderType b,
+    Dictionary<ColliderTargetType, Action<ICollider, ICollider>> handlers = new();
+    public Dictionary<ColliderTargetType, ColliderTargetType> ColliderTargetTypeTriggerMap = new();
+    public void Register(ColliderTargetType a, ColliderTargetType b,
         Action<ICollider, ICollider> handler)
     {
         handlers[a|b] = handler;
-        if (!ColliderTypeTriggerMap.TryAdd(a,b))
-            ColliderTypeTriggerMap[a] |= b;
-        if (!ColliderTypeTriggerMap.TryAdd(b,a))
-            ColliderTypeTriggerMap[b] |= a;
+        if (!ColliderTargetTypeTriggerMap.TryAdd(a,b))
+            ColliderTargetTypeTriggerMap[a] |= b;
+        if (!ColliderTargetTypeTriggerMap.TryAdd(b,a))
+            ColliderTargetTypeTriggerMap[b] |= a;
     }
 
-    public ColliderType GetTriggerTypes(ColliderType type)
+    public ColliderTargetType GetTriggerTypes(ColliderTargetType type)
     {
-        if (ColliderTypeTriggerMap.TryGetValue(type,out var triggerTypes))
+        if (ColliderTargetTypeTriggerMap.TryGetValue(type,out var triggerTypes))
             return triggerTypes;
-        return ColliderType.None;
+        return ColliderTargetType.None;
     }
     public void Resolve(ICollider a, ICollider b)
     {
@@ -38,9 +38,9 @@ public class ColliderHandler:Singleton<ColliderHandler>
     
     public void Init()
     {
-        Register(ColliderType.PlayerBullet, ColliderType.Enemy, PlayerBullet2Enemy);
-        Register(ColliderType.EnemyBullet, ColliderType.Player, EnemyBullet2Player);
-        Register(ColliderType.Enemy, ColliderType.Player, Enemy2Player);
+        Register(ColliderTargetType.PlayerBullet, ColliderTargetType.Enemy, PlayerBullet2Enemy);
+        Register(ColliderTargetType.EnemyBullet, ColliderTargetType.Player, EnemyBullet2Player);
+        Register(ColliderTargetType.Enemy, ColliderTargetType.Player, Enemy2Player);
     }
 
     public void PlayerBullet2Enemy(ICollider a,ICollider b)
