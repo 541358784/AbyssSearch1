@@ -9,6 +9,7 @@ public enum ColliderTargetType
     Player = 1 << 1,
     Enemy = 1 << 2,
     EnemyBullet = 1 << 3,
+    Wall = 1 << 4,
 }
 
 [Flags]

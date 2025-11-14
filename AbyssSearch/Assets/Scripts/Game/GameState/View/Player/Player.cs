@@ -10,11 +10,6 @@ public class Player : GameObj
         return ColliderTargetType.Player;
     }
 
-    public override void OnCollide(ICollider collider)
-    {
-        
-    }
-
     public override float GetCollideAreaRadius()
     {
         return 10f;
@@ -30,19 +25,17 @@ public class Player : GameObj
     public void Init()
     {
         CurrentSpeed = Vector2.zero;
-        CurrentControlState = new Dictionary<ControlDirection, bool>();
-        foreach ( ControlDirection dir in Enum.GetValues(typeof(ControlDirection)))
-        {
-            CurrentControlState.Add(dir,false);
-        }
+        
     }
 
     public override void LogicUpdate()
     {
+        base.LogicUpdate();
         HandleMove();
         HandleAttack();
     }
 
+    #region Control
     public enum ControlDirection
     {
         Up,
@@ -81,12 +74,11 @@ public class Player : GameObj
             state[ControlDirection.Left] = false;
         }
     }
-    public Dictionary<ControlDirection, bool> CurrentControlState;
+    #endregion
     public Vector2 CurrentSpeed;
     public void HandleMove()
     {
         var controlState = GetControlState();
-        CurrentControlState = controlState;
         var maxSpeed = PlayerConfig.MoveSpeed;
         var addSpeedPerSec = maxSpeed / PlayerConfig.AddSpeedTime;
         var addSpeed = addSpeedPerSec * Time.deltaTime;
@@ -191,5 +183,17 @@ public class Player : GameObj
         var bullet = BulletFactory.Instance.CreateBullet();
         
 
+    }
+
+    public override ColliderShapeType GetColliderShapeType()
+    {
+        return ColliderShapeType.Round;
+    }
+    public override ColliderShapeData GetCollideShapeData()
+    {
+        return new ColliderShapeData()
+        {
+            Radius = 1f
+        };
     }
 }

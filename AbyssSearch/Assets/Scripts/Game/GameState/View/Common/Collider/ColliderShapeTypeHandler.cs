@@ -25,19 +25,15 @@ public class ColliderShapeHandler:Singleton<ColliderShapeHandler>
             return triggerTypes;
         return ColliderShapeType.None;
     }
-    public void Resolve(ICollider a, ICollider b)
+    public bool IsOverlap(ICollider a, ICollider b)
     {
         if (handlers.TryGetValue(a.ShapeType | b.ShapeType, out var h))
-            h(a, b);
-    }
-    public void OnColliderTrigger(EventColliderTrigger evt)
-    {
-        Resolve(evt.A, evt.B);//处理碰撞事件
+            return h(a, b);
+        return false;
     }
     public ColliderShapeHandler()
     {
         Init();
-        EventManager.Instance.AddEvent<EventColliderTrigger>(OnColliderTrigger);//监听碰撞事件
     }
     
     public void Init()
@@ -78,7 +74,9 @@ public class ColliderShapeHandler:Singleton<ColliderShapeHandler>
     }
     public bool Rect2Rect(ICollider a,ICollider b)
     {
-        bool isColliding = a.Max.x > b.Min.x && a.Min.x < b.Max.x &&
-                           a.Max.y > b.Min.y && a.Min.y < b.Max.y;
+        
+        bool isColliding = a.ColliderSurroundRect.max.x > b.ColliderSurroundRect.min.x && a.ColliderSurroundRect.min.x < b.ColliderSurroundRect.max.x &&
+                           a.ColliderSurroundRect.max.y > b.ColliderSurroundRect.min.y && a.ColliderSurroundRect.min.y < b.ColliderSurroundRect.max.y;
+        return isColliding;
     }
 }

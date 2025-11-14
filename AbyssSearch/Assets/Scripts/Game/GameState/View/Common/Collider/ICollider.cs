@@ -6,7 +6,8 @@ public interface ICollider
 {
     public Vector2 GetColliderPosition();
     public Vector2 ColliderPosition => GetColliderPosition();
-    public void OnCollide(ICollider collider);
+    public Vector2 LastFrameColliderPosition => GetLastFrameColliderPosition();//上一帧的碰撞体位置，用来计算撞墙后的位置
+    public Vector2 GetLastFrameColliderPosition();
     public ColliderTargetType GetColliderTargetType();
     public ColliderTargetType Type => GetColliderTargetType();
     public ColliderShapeType GetColliderShapeType();
@@ -25,5 +26,29 @@ public interface ICollider
     public void ColliderUnRegister()//注销碰撞体
     {
         EventManager.Instance.SendEventImmediately(new EventColliderUnRegister(this));
+    }
+
+    public Rect ColliderSurroundRect//最小包围矩形
+    {
+        get
+        {
+            if (ShapeType == ColliderShapeType.Rect)
+            {
+                return new Rect(
+                    ColliderPosition.x - ShapeData.Width / 2,
+                    ColliderPosition.y - ShapeData.Height / 2,
+                    ShapeData.Width,
+                    ShapeData.Height);
+            }
+            else if (ShapeType == ColliderShapeType.Round)
+            {
+                return new Rect(
+                    ColliderPosition.x - ShapeData.Radius,
+                    ColliderPosition.y - ShapeData.Radius,
+                    ShapeData.Radius*2,
+                    ShapeData.Radius*2);
+            }
+            return Rect.zero;
+        }
     }
 }
