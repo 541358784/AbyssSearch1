@@ -34,6 +34,64 @@ public abstract class StorageBase
 
    protected abstract void BuildJson();
    public abstract void FromJson(string jsonStr, int index, out int endIndex);
+   
+   // 辅助方法：检查边界
+   protected static void CheckBounds(string jsonStr, int index, string context)
+   {
+      if (index < 0 || index >= jsonStr.Length)
+         throw new Exception($"{context}: 索引越界 index={index}, length={jsonStr.Length}");
+   }
+   
+   // 辅助方法：转义JSON字符串
+   protected static void EscapeJsonString(StringBuilder sb, string str)
+   {
+      if (str == null) return;
+      foreach (char c in str)
+      {
+         switch (c)
+         {
+            case '"': sb.Append("\\\""); break;
+            case '\\': sb.Append("\\\\"); break;
+            case '\n': sb.Append("\\n"); break;
+            case '\r': sb.Append("\\r"); break;
+            case '\t': sb.Append("\\t"); break;
+            default: sb.Append(c); break;
+         }
+      }
+   }
+   
+   // 辅助方法：解析转义字符串
+   protected static string UnescapeJsonString(string jsonStr, ref int index)
+   {
+      StringBuilder sb = new StringBuilder();
+      while (index < jsonStr.Length)
+      {
+         if (jsonStr[index] == '\\' && index + 1 < jsonStr.Length)
+         {
+            index++; // 跳过 '\'
+            switch (jsonStr[index])
+            {
+               case '"': sb.Append('"'); break;
+               case '\\': sb.Append('\\'); break;
+               case 'n': sb.Append('\n'); break;
+               case 'r': sb.Append('\r'); break;
+               case 't': sb.Append('\t'); break;
+               default: sb.Append('\\').Append(jsonStr[index]); break;
+            }
+            index++;
+         }
+         else if (jsonStr[index] == '"')
+         {
+            break;
+         }
+         else
+         {
+            sb.Append(jsonStr[index]);
+            index++;
+         }
+      }
+      return sb.ToString();
+   }
 }
 public class StorageBaseDictionary:StorageBase,IEnumerable<KeyValuePair<string,StorageBase>>
 {
@@ -42,12 +100,17 @@ public class StorageBaseDictionary:StorageBase,IEnumerable<KeyValuePair<string,S
    {
       StringBuilder sb = new StringBuilder();
       sb.Append('{');
+      bool first = true;
       foreach (var pair in InnerDictionary)
       {
-         sb.Append(pair.Key);
-         sb.Append('=');
+         if (!first) sb.Append(',');
+         first = false;
+         
+         // 标准JSON格式：键需要引号，使用冒号
+         sb.Append('"');
+         EscapeJsonString(sb, pair.Key);
+         sb.Append("\":");
          pair.Value?.Json(sb);
-         sb.Append(',');
       }
       sb.Append('}');
       json = sb.ToString();
@@ -85,6 +148,9 @@ public class StorageBaseDictionary:StorageBase,IEnumerable<KeyValuePair<string,S
    }
    public void SetValue(string key,StorageBase value)
    {
+      if (value == null)
+         throw new ArgumentNullException(nameof(value));
+         
       if (InnerDictionary.ContainsKey(key))
       {
          InnerDictionary[key].Parent = null;
@@ -110,6 +176,9 @@ public class StorageBaseDictionary:StorageBase,IEnumerable<KeyValuePair<string,S
 
    public void Add(string key,StorageBase value)
    {
+      if (value == null)
+         throw new ArgumentNullException(nameof(value));
+         
       InnerDictionary.Add(key,value);
       InnerDictionary[key].Parent = this;
       IsDirty = true;
@@ -126,27 +195,95 @@ public class StorageBaseDictionary:StorageBase,IEnumerable<KeyValuePair<string,S
    
    public override void FromJson(string jsonStr,int index,out int endIndex)
    {
+      CheckBounds(jsonStr, index, "字典解析");
+      
       if (jsonStr[index] != '{')
-         throw new Exception("字典解析错误,首位不为{");
-      index++;//跳前尖括号
-      while (jsonStr[index] != '}')
+         throw new Exception($"字典解析错误: 首位不为{{, index={index}, char='{jsonStr[index]}'");
+      
+      index++; // 跳过 '{'
+      InnerDictionary.Clear();
+      
+      // 跳过空白字符
+      while (index < jsonStr.Length && char.IsWhiteSpace(jsonStr[index]))
+         index++;
+      
+      // 空字典
+      if (index < jsonStr.Length && jsonStr[index] == '}')
       {
-         StringBuilder sb = new StringBuilder();
-         while (jsonStr[index] != '=')
-         {
-            sb.Append(jsonStr[index]);
-            index++;
-         }
-         var key = sb.ToString();
-         index++;//跳等号
-         var value = StorageManager.FromJson(jsonStr, index, out index);
-         value.Parent = this;
-         if (jsonStr[index] != ',')
-            throw new Exception("字典解析错误,间隔位不为,");
-         index++;//跳逗号
-         InnerDictionary.Add(key,value);
+         endIndex = index + 1;
+         IsDirty = true;
+         return;
       }
-      index++;//跳后尖括号
+      
+      while (index < jsonStr.Length)
+      {
+         CheckBounds(jsonStr, index, "字典解析-键");
+         
+         // 跳过空白字符
+         while (index < jsonStr.Length && char.IsWhiteSpace(jsonStr[index]))
+            index++;
+         
+         if (index >= jsonStr.Length || jsonStr[index] == '}')
+            break;
+            
+         // 解析键（应该是引号字符串）
+         if (jsonStr[index] != '"')
+            throw new Exception($"字典解析错误: 键应该以\"开始, index={index}, char='{jsonStr[index]}'");
+         
+         index++; // 跳过开始的 '"'
+         string key = UnescapeJsonString(jsonStr, ref index);
+         
+         if (index >= jsonStr.Length || jsonStr[index] != '"')
+            throw new Exception($"字典解析错误: 键未正确结束, index={index}");
+         
+         index++; // 跳过结束的 '"'
+         
+         // 跳过空白字符
+         while (index < jsonStr.Length && char.IsWhiteSpace(jsonStr[index]))
+            index++;
+         
+         CheckBounds(jsonStr, index, "字典解析-冒号");
+         
+         if (jsonStr[index] != ':')
+            throw new Exception($"字典解析错误: 键值对之间应该用:分隔, index={index}, char='{jsonStr[index]}'");
+         
+         index++; // 跳过 ':'
+         
+         // 跳过空白字符
+         while (index < jsonStr.Length && char.IsWhiteSpace(jsonStr[index]))
+            index++;
+         
+         // 解析值
+         var value = StorageManager.FromJson(jsonStr, index, out index);
+         if (value == null)
+            throw new Exception($"字典解析错误: 无法解析值, index={index}");
+            
+         value.Parent = this;
+         InnerDictionary.Add(key, value);
+         
+         // 跳过空白字符
+         while (index < jsonStr.Length && char.IsWhiteSpace(jsonStr[index]))
+            index++;
+         
+         // 检查是否有逗号或结束
+         if (index >= jsonStr.Length)
+            throw new Exception($"字典解析错误: 未找到结束符}}, index={index}");
+            
+         if (jsonStr[index] == '}')
+            break;
+            
+         if (jsonStr[index] != ',')
+            throw new Exception($"字典解析错误: 元素之间应该用,分隔, index={index}, char='{jsonStr[index]}'");
+         
+         index++; // 跳过 ','
+      }
+      
+      CheckBounds(jsonStr, index, "字典解析-结束");
+      
+      if (jsonStr[index] != '}')
+         throw new Exception($"字典解析错误: 未找到结束符}}, index={index}, char='{jsonStr[index]}'");
+      
+      index++; // 跳过 '}'
       endIndex = index;
       IsDirty = true;
    }
@@ -158,10 +295,12 @@ public class StorageBaseList : StorageBase ,IEnumerable<StorageBase>
    {
       StringBuilder sb = new StringBuilder();
       sb.Append('[');
+      bool first = true;
       foreach (var item in InnerList)
       {
+         if (!first) sb.Append(',');
+         first = false;
          item?.Json(sb);
-         sb.Append(',');
       }
       sb.Append(']');
       json = sb.ToString();
@@ -180,6 +319,9 @@ public class StorageBaseList : StorageBase ,IEnumerable<StorageBase>
    }
    public void Add(StorageBase value)
    {
+      if (value == null)
+         throw new ArgumentNullException(nameof(value));
+         
       InnerList.Add(value);
       value.Parent = this;
       IsDirty = true;
@@ -206,6 +348,9 @@ public class StorageBaseList : StorageBase ,IEnumerable<StorageBase>
 
    public void Insert(int index,StorageBase value)
    {
+      if (value == null)
+         throw new ArgumentNullException(nameof(value));
+         
       if (index >= 0 && index <= InnerList.Count)
       {
          InnerList.Insert(index,value);
@@ -215,6 +360,9 @@ public class StorageBaseList : StorageBase ,IEnumerable<StorageBase>
    }
    public void SetValue(int index,StorageBase value)
    {
+      if (value == null)
+         throw new ArgumentNullException(nameof(value));
+         
       if (index >= 0 && index < InnerList.Count)
       {
          InnerList[index].Parent = null;
@@ -236,19 +384,66 @@ public class StorageBaseList : StorageBase ,IEnumerable<StorageBase>
    
    public override void FromJson(string jsonStr,int index,out int endIndex)
    {
+      CheckBounds(jsonStr, index, "列表解析");
+      
       if (jsonStr[index] != '[')
-         throw new Exception("列表解析错误,首位不为[");
-      index++;//跳前尖括号
-      while (jsonStr[index] != ']')
+         throw new Exception($"列表解析错误: 首位不为[, index={index}, char='{jsonStr[index]}'");
+      
+      index++; // 跳过 '['
+      InnerList.Clear();
+      
+      // 跳过空白字符
+      while (index < jsonStr.Length && char.IsWhiteSpace(jsonStr[index]))
+         index++;
+      
+      // 空列表
+      if (index < jsonStr.Length && jsonStr[index] == ']')
       {
-         var value = StorageManager.FromJson(jsonStr, index, out index);
-         value.Parent = this;
-         if (jsonStr[index] != ',')
-            throw new Exception("列表解析错误,间隔位不为,");
-         index++;//跳逗号
-         InnerList.Add(value);
+         endIndex = index + 1;
+         IsDirty = true;
+         return;
       }
-      index++;//跳后尖括号
+      
+      while (index < jsonStr.Length)
+      {
+         CheckBounds(jsonStr, index, "列表解析-元素");
+         
+         // 跳过空白字符
+         while (index < jsonStr.Length && char.IsWhiteSpace(jsonStr[index]))
+            index++;
+         
+         if (index >= jsonStr.Length || jsonStr[index] == ']')
+            break;
+         
+         var value = StorageManager.FromJson(jsonStr, index, out index);
+         if (value == null)
+            throw new Exception($"列表解析错误: 无法解析元素, index={index}");
+            
+         value.Parent = this;
+         InnerList.Add(value);
+         
+         // 跳过空白字符
+         while (index < jsonStr.Length && char.IsWhiteSpace(jsonStr[index]))
+            index++;
+         
+         if (index >= jsonStr.Length)
+            throw new Exception($"列表解析错误: 未找到结束符], index={index}");
+            
+         if (jsonStr[index] == ']')
+            break;
+            
+         if (jsonStr[index] != ',')
+            throw new Exception($"列表解析错误: 元素之间应该用,分隔, index={index}, char='{jsonStr[index]}'");
+         
+         index++; // 跳过 ','
+      }
+      
+      CheckBounds(jsonStr, index, "列表解析-结束");
+      
+      if (jsonStr[index] != ']')
+         throw new Exception($"列表解析错误: 未找到结束符], index={index}, char='{jsonStr[index]}'");
+      
+      index++; // 跳过 ']'
       endIndex = index;
       IsDirty = true;
    }
@@ -263,9 +458,10 @@ public class StorageBaseString : StorageBase
    protected override void BuildJson()
    {
       StringBuilder sb = new StringBuilder();
-      sb.Append('\"');
-      sb.Append(InnerString);
-      sb.Append('\"');
+      sb.Append('"');
+      if (InnerString != null)
+         EscapeJsonString(sb, InnerString);
+      sb.Append('"');
       json = sb.ToString();
    }
 
@@ -273,44 +469,31 @@ public class StorageBaseString : StorageBase
    {
       if (InnerString == value)
          return;
-      InnerString = value;
+      InnerString = value ?? string.Empty;
       IsDirty = true;
    }
 
    public string GetValue()
    {
-      return InnerString;
+      return InnerString ?? string.Empty;
    }
 
    public override void FromJson(string jsonStr,int index,out int endIndex)
    {
-      if (jsonStr[index] != '\"')
-         throw new Exception("字符串解析错误,首位不为\"");
-      index++;
-      StringBuilder sb = new StringBuilder();
-      while (!CheckEnd(jsonStr,index))
-      {
-         sb.Append(jsonStr[index]);
-         index++;
-      }
-      index++;
-      InnerString = sb.ToString();
+      CheckBounds(jsonStr, index, "字符串解析");
+      
+      if (jsonStr[index] != '"')
+         throw new Exception($"字符串解析错误: 首位不为\", index={index}, char='{jsonStr[index]}'");
+      
+      index++; // 跳过开始的 '"'
+      InnerString = UnescapeJsonString(jsonStr, ref index);
+      
+      if (index >= jsonStr.Length || jsonStr[index] != '"')
+         throw new Exception($"字符串解析错误: 未找到结束符\", index={index}");
+      
+      index++; // 跳过结束的 '"'
       endIndex = index;
       IsDirty = true;
-   }
-
-   private bool CheckEnd(string jsonStr,int index)
-   {
-      if (jsonStr[index] != '\"')
-         return false;
-      var count = 0;
-      index--;
-      while (jsonStr[index] == '\\')
-      {
-         count++;
-         index--;
-      }
-      return count % 2 == 0;
    }
 }
 public interface IStorageContainer
@@ -417,7 +600,13 @@ public class StorageInt:StorageBaseStringContainer
    {
       get
       {
-         return int.Parse(InnerStorageBaseString.GetValue());
+         string str = InnerStorageBaseString.GetValue();
+         if (string.IsNullOrEmpty(str))
+            return 0;
+         if (int.TryParse(str, out int result))
+            return result;
+         UnityEngine.Debug.LogWarning($"StorageInt: 无法解析 '{str}', 返回默认值0");
+         return 0;
       }
       set
       {
@@ -440,7 +629,13 @@ public class StorageFloat:StorageBaseStringContainer
    {
       get
       {
-         return float.Parse(InnerStorageBaseString.GetValue());
+         string str = InnerStorageBaseString.GetValue();
+         if (string.IsNullOrEmpty(str))
+            return 0f;
+         if (float.TryParse(str, out float result))
+            return result;
+         UnityEngine.Debug.LogWarning($"StorageFloat: 无法解析 '{str}', 返回默认值0");
+         return 0f;
       }
       set
       {
@@ -462,7 +657,13 @@ public class StorageLong:StorageBaseStringContainer
    {
       get
       {
-         return long.Parse(InnerStorageBaseString.GetValue());
+         string str = InnerStorageBaseString.GetValue();
+         if (string.IsNullOrEmpty(str))
+            return 0;
+         if (long.TryParse(str, out long result))
+            return result;
+         UnityEngine.Debug.LogWarning($"StorageLong: 无法解析 '{str}', 返回默认值0");
+         return 0;
       }
       set
       {
